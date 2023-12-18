@@ -1,5 +1,8 @@
-import 'package:books_app_v1/components/my_button.dart';
+import 'package:books_app_v1/components/primary_button.dart';
+import 'package:books_app_v1/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class MyWelcomePage extends StatelessWidget {
   const MyWelcomePage({super.key});
@@ -69,11 +72,14 @@ class MyWelcomePage extends StatelessWidget {
           ),
           Spacer(),
           Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: PrimaryButton(
-                btnName: 'CONTINUE',
-                ontap: () {},
-              )),
+            padding: const EdgeInsets.all(12.0),
+            child: PrimaryButton(
+              btnName: 'CONTINUE',
+              ontap: () {
+                Get.offAll(HomePage());
+              },
+            ),
+          ),
         ],
       ),
     );
